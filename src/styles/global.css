@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light dark;
+}
+
+/* Card primitive */
+.card {
+  border-radius: 1rem;
+  border: 1px solid rgb(228 228 231);
+  background-color: rgb(255 255 255 / 0.6);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    border-color: rgb(39 39 42);
+    background-color: rgb(24 24 27 / 0.6);
+  }
+}
+.card-title {
+  font-size: 0.875rem;
+  color: rgb(113 113 122);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card-title {
+    color: rgb(161 161 170);
+  }
+}
+
+.card-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .card-value {
+    font-size: 1.875rem;
+  }
+}
+
+/* Accent utilities */
+.text-gain {
+  color: rgb(52 211 153);
+}
+.text-loss {
+  color: rgb(248 113 113);
+}
+.badge {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  background-color: rgb(244 244 245);
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge {
+    background-color: rgb(39 39 42);
+  }
+}
+
+/* Single-screen layout hint */
+.main-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+@media (min-width: 1024px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+}
