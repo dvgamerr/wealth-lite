@@ -1,7 +1,6 @@
-<script lang="ts">
-  import type { Holding } from '../lib/data/mock'
-  import { fmtTHB, fmtPct } from '../lib/utils/format'
-  export let holdings: Holding[] = []
+<script>
+  import { fmtTHB, fmtPct } from '../lib/utils/format.js'
+  export let holdings = []
 
   const best = [...holdings].sort((a, b) => b.pct - a.pct)[0]
   const worst = [...holdings].sort((a, b) => a.pct - b.pct)[0]

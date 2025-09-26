@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro'
+import Navbar from '../components/Navbar.svelte'
+import DividendHistoryDetail from '../components/DividendHistoryDetail.svelte'
+---
+
+<Base>
+  <Navbar client:load currentPage="dividends" pageTitle="Dividend History" />
+
+  <main class="max-w-7xl mx-auto px-4 py-4 space-y-6">
+    <!-- Page Header -->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Dividend History</h1>
+      <p class="text-zinc-600 dark:text-zinc-400">Comprehensive dividend details by year with in-depth analysis</p>
+    </div>
+
+    <!-- Dividend History Detail -->
+    <DividendHistoryDetail client:load />
+  </main>
+</Base>

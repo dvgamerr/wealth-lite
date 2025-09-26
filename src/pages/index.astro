@@ -2,13 +2,15 @@
 import Base from '../layouts/Base.astro'
 import Navbar from '../components/Navbar.svelte'
 import PortfolioSummary from '../components/PortfolioSummary.svelte'
+import PortfolioSummaryTable from '../components/PortfolioSummaryTable.svelte'
 import DividendTracker from '../components/DividendTracker.svelte'
+import YearlyDividendSummary from '../components/YearlyDividendSummary.svelte'
 import QuickStats from '../components/QuickStats.svelte'
 import AssetAllocation from '../components/AssetAllocation.svelte'
 import PortfolioBreakdown from '../components/PortfolioBreakdown.svelte'
 import HoldingsTable from '../components/HoldingsTable.svelte'
 
-import { holdings, portfolio } from '../lib/data/mock'
+import { holdings, portfolio } from '../lib/data/mock.js'
 ---
 
 <Base>
@@ -18,10 +20,15 @@ import { holdings, portfolio } from '../lib/data/mock'
     <!-- Top: Summary -->
     <PortfolioSummary totalValue={portfolio.totalValue} totalCost={portfolio.totalCost} todayChange={portfolio.todayChange} />
 
-    <!-- Middle row: Dividend (1/3) + QuickStats (2/3) -->
+    <!-- Middle row: Dividend + Summary Table -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="lg:col-span-1"><DividendTracker /></div>
-      <div class="lg:col-span-2"><QuickStats holdings={holdings} /></div>
+      <div class="lg:col-span-2"><PortfolioSummaryTable /></div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-1 gap-4">
+      <QuickStats holdings={holdings} />
     </div>
 
     <!-- Allocation + Breakdown with consistent styling, no totals -->
