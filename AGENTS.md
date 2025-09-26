@@ -1,8 +1,16 @@
 # AGENTS.md
 
-## Project Overview
+## Guidelines
 
-**Wealth Lite** เป็นโปรเจ็กต์ที่พัฒนาด้วย Astro framework พร้อมการรองรับ Svelte components และ TailwindCSS สำหรับการจัดการทรัพย์สิน/การเงินแบบง่าย
+- **Critical Rule**: Never modify, delete, or restructure existing code without explicit user permission
+- **Safe Operations**: Only add new files, components, or features in designated areas
+- **Preserve Functionality**: Maintain all existing functionality and styling when making additions
+- **Ask First**: Always request permission before changing any existing `.astro`, `.svelte`, or configuration files
+- **Incremental Development**: Build new features alongside existing code, not as replacements
+- **Backup Awareness**: Assume no version control - treat all existing code as irreplaceable
+- **Documentation**: Update only documentation files (`README.md`, `AGENTS.md`) without permission requirements
+- **Testing**: Verify that new additions don't break existing functionality
+- **Conservative Approach**: When in doubt, create new files rather than modifying existing ones
 
 ## Tech Stack
 
@@ -34,7 +42,7 @@ wealth-lite/
 
 ```bash
 # Install dependencies
-bun install
+bun i
 
 # Start development server (localhost:4321)
 bun run dev
@@ -52,17 +60,20 @@ bun run astro [command]
 ## Key Features & Architecture
 
 ### 1. **Astro Framework**
+
 - Static site generation with optional SSR capabilities
 - File-based routing system in `src/pages/`
 - Component islands architecture for optimal performance
 - Built-in optimization and bundling
 
 ### 2. **Svelte Integration**
+
 - Reactive components with Svelte 5
 - Island architecture - components are interactive only when needed
 - Preprocessor configured for Vite integration
 
 ### 3. **Styling System**
+
 - TailwindCSS v4 integrated via Vite plugin
 - Global styles in `src/styles/global.css`
 - Utility-first CSS approach
@@ -70,16 +81,19 @@ bun run astro [command]
 ## Development Guidelines
 
 ### Adding New Pages
+
 1. Create `.astro` files in `src/pages/`
 2. Follow Astro's file-based routing convention
 3. Use Astro frontmatter for data fetching and logic
 
 ### Creating Components
+
 1. **Astro Components**: Create `.astro` files for static content
 2. **Svelte Components**: Create `.svelte` files for interactive features
 3. Place components in `src/components/` (to be created)
 
 ### Styling Guidelines
+
 1. Use TailwindCSS utility classes for most styling
 2. Add custom styles in `src/styles/global.css` if needed
 3. Follow mobile-first responsive design principles
@@ -87,42 +101,5 @@ bun run astro [command]
 ## Recommended Project Extensions
 
 Based on `.vscode/extensions.json`:
+
 - `astro-build.astro-vscode` - Official Astro language support
-
-## Environment Setup
-
-1. **Prerequisites**: Node.js 18+ and Bun package manager
-2. **VS Code**: Install recommended extensions
-3. **Development**: Run `bun run dev` for hot-reload development
-
-## Deployment Considerations
-
-- **Static Build**: Project configured for static site generation
-- **Output**: Built files in `dist/` directory
-- **Assets**: Optimized and hashed automatically by Astro
-- **Hosting**: Can be deployed to any static hosting service (Netlify, Vercel, GitHub Pages, etc.)
-
-## Future Development Areas
-
-Based on the project name "wealth-lite", potential features to implement:
-
-1. **Financial Dashboard**: Portfolio tracking, asset allocation
-2. **Transaction Management**: Income/expense tracking
-3. **Goal Setting**: Financial goals and progress tracking
-4. **Data Visualization**: Charts and graphs for financial data
-5. **Settings**: User preferences and configuration
-
-## Configuration Files
-
-- `astro.config.mjs`: Main Astro configuration with Svelte and TailwindCSS
-- `svelte.config.js`: Svelte preprocessor configuration
-- `package.json`: Dependencies and build scripts
-- `.vscode/`: VS Code workspace settings and debug configuration
-
-## Notes for AI Agents
-
-- This is a minimal Astro starter that has been configured with Svelte and TailwindCSS
-- The project is in early development stage with basic setup complete
-- Perfect for building lightweight financial/wealth management applications
-- Focus on performance and user experience with Astro's island architecture
-- Use Svelte for interactive components and Astro for static content
