@@ -23,7 +23,7 @@
     <div>
       <h3 class="text-white font-semibold text-lg">GOLD</h3>
       <p class="text-emerald-400 font-semibold">+53.00%</p>
-      <p class="text-zinc-400 text-xs">+฿11,054.46</p>
+      <p class="text-zinc-400 text-xs">+11,054.46</p>
     </div>
   </section>
 
@@ -47,7 +47,7 @@
     <div>
       <h3 class="text-white font-semibold text-lg">MA</h3>
       <p class="text-red-400 font-semibold">-0.30%</p>
-      <p class="text-zinc-400 text-xs">-฿914.93</p>
+      <p class="text-zinc-400 text-xs">-914.93</p>
     </div>
   </section>
 
@@ -93,7 +93,7 @@
       </div>
     </div>
     <div>
-      <h3 class="text-white font-semibold text-lg">฿198.5K</h3>
+      <h3 class="text-white font-semibold text-lg">198.5K</h3>
       <p class="text-emerald-400 text-sm">USD Cash</p>
       <p class="text-zinc-400 text-xs">16.9% of portfolio</p>
     </div>

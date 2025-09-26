@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar.svelte'
 import PortfolioSummary from '../components/PortfolioSummary.svelte'
 import PortfolioSummaryTable from '../components/PortfolioSummaryTable.svelte'
 import DividendTracker from '../components/DividendTracker.svelte'
-import YearlyDividendSummary from '../components/YearlyDividendSummary.svelte'
 import QuickStats from '../components/QuickStats.svelte'
 import AssetAllocation from '../components/AssetAllocation.svelte'
 import PortfolioBreakdown from '../components/PortfolioBreakdown.svelte'
@@ -17,21 +16,27 @@ import { holdings, portfolio } from '../lib/data/mock.js'
   <Navbar client:load />
 
   <main class="max-w-7xl mx-auto px-4 py-4 main-grid">
-    <!-- Top: Summary -->
-    <PortfolioSummary totalValue={portfolio.totalValue} totalCost={portfolio.totalCost} todayChange={portfolio.todayChange} />
-
-    <!-- Middle row: Dividend + Summary Table -->
+    <!-- Top row: Portfolio Summary + Table -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-      <div class="lg:col-span-1"><DividendTracker /></div>
-      <div class="lg:col-span-2"><PortfolioSummaryTable /></div>
+      <div class="lg:col-span-1">
+        <PortfolioSummary totalValue={portfolio.totalValue} totalCost={portfolio.totalCost} todayChange={portfolio.todayChange} />
+      </div>
+      <div class="lg:col-span-2">
+        <PortfolioSummaryTable />
+      </div>
     </div>
 
-    <!-- Stats row -->
-    <div class="grid grid-cols-1 gap-4">
-      <QuickStats holdings={holdings} />
+    <!-- Second row: Dividend Tracking + Key Stats (Performer, Total Assets, Cash Position) -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+      <div class="lg:col-span-2">
+        <DividendTracker />
+      </div>
+      <div class="lg:col-span-3">
+        <QuickStats holdings={holdings} portfolio={portfolio} cash={198500} cashCurrency="USD Cash" />
+      </div>
     </div>
 
-    <!-- Allocation + Breakdown with consistent styling, no totals -->
+    <!-- Allocation + Breakdown -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <AssetAllocation />
       <PortfolioBreakdown />
